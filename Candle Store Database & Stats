@@ -1,0 +1,33 @@
+/** Design a Store Database **/
+
+——create candle store database
+CREATE TABLE candles (id INTEGER PRIMARY KEY, scent TEXT, color TEXT, price INTEGER, quantity INTEGER);
+
+INSERT INTO candles VALUES
+(1, "Lavender Lemonade", "lavender", 35, 20),
+(2, "Toasted Marshmallow", "white", 35, 10),
+(3, "Lemon Verbena", "yellow", 35, 15),
+(4, "Pistachio Ice Cream", "green", 35, 5),
+(5, "Raspberry Sorbet", "raspberry", 35, 11),
+(6, "The Skin of a Killer", "iridescent glitter", 100, 17),
+(7, "Jedi Juices", "black", 200, 10),
+(8, "Daddywise", "copper", 5, 100),
+(9, "Regal Corns", "yellow", 30, 5),
+(10, "Dracarys", "black", 300, 3),
+(11, "May Queen", "yellow", 150, 1),
+(12, "Stope's Boudoir", "gold", 2, 1), 
+(13, "Like With Mouths?", "rainbow", 35, 17),
+(14, "Protruding to Pieces", "black", 45, 3),
+(15, "Jellicle", "red", 1, 0);
+
+——display all data in database
+SELECT * FROM candles;
+
+——display database ordered by price
+SELECT * FROM candles ORDER BY price;
+
+——display database items whose price is > $100
+SELECT * FROM candles WHERE price > 100 ORDER BY price;
+
+——display all yellow database items
+SELECT * FROM candles WHERE color = "yellow";
