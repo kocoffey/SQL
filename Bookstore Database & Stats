@@ -33,7 +33,37 @@ INSERT INTO bookstore VALUES
 (27, "True Confessions of Charlotte Doyle, The", "Avi", "children's classics", "paperback", "used", "fiction", "standalone", 232, 1990, 4.99, 4),
 (28, "Final Empire, The (Mistborn #1)", "Sanderson, Brandon", "fantasy", "paperback", "new", "fiction", "series", 672, 2006, 13.80, 8),
 (29, "Assassin's Apprentice (The Farseer Trilogy #1)", "Hobb, Robin", "fantasy", "paperback", "new", "fiction", "series", 435, 1995, 11.43, 9),
-(30, "Indigenous Peoples' History of the United States, An (ReVisioning American History #3)", "Dunbar-Ortiz, Roxanne", "history", "paperback", "used", "nonfiction", "series", 320, 2014, 12.79, 4);
+(30, "Indigenous Peoples' History of the United States, An (ReVisioning American History #3)", "Dunbar-Ortiz, Roxanne", "history", "paperback", "used", "nonfiction", "series", 320, 2014, 12.79, 4),
+(31, "Saga, Volume 1 (Saga #1)", "Vaughn, Brian K.", "science fiction", "graphic novel", "new", "fiction", "series", 160, 2012, 9.79, 22),
+(32, "Saga, Volume 2 (Saga #2)", "Vaughn, Brian K.", "science fiction", "graphic novel", "new", "fiction", "series", 144, 2013, 14.24, 12),
+(33, "Saga, Volume 3 (Saga #3)", "Vaughn, Brian K.", "science fiction", "graphic novel", "new", "fiction", "series", 144, 2014, 8.99, 18),
+(34, "Saga, Volume 4 (Saga #4)", "Vaughn, Brian K.", "science fiction", "graphic novel", "new", "fiction", "series", 144, 2014, 14.99, 17),
+(35, "Saga, Volume 5 (Saga #5)", "Vaughn, Brian K.", "science fiction", "graphic novel", "new", "fiction", "series", 152, 2015, 13.49, 12),
+(36, "Saga, Volume 6 (Saga #6)", "Vaughn, Brian K.", "science fiction", "graphic novel", "new", "fiction", "series", 152, 2016, 9.99, 18),
+(37, "Saga, Volume 7 (Saga #7)", "Vaughn, Brian K.", "science fiction", "graphic novel", "new", "fiction", "series", 152, 2017, 8.99, 16),
+(38, "Saga, Volume 8 (Saga #8)", "Vaughn, Brian K.", "science fiction", "graphic novel", "new", "fiction", "series", 152, 2018, 13.49, 18),
+(39, "Saga, Volume 9 (Saga #9)", "Vaughn, Brian K.", "science fiction", "graphic novel", "new", "fiction", "series", 152, 2018, 8.99, 28),
+(40, "Saga, Volume 10 (Saga #10)", "Vaughn, Brian K.", "science fiction", "graphic novel", "new", "fiction", "series", 160, 2022, 14.99, 86),
+(41, "Saga, Volume 11 (Saga #11)", "Vaughn, Brian K.", "science fiction", "graphic novel", "new", "fiction", "series", 160, 2023, 15.29, 428),
+(42, "Jane Eyre", "Bronte, Charlotte", "classics", "hardcover", "new", "fiction", "standalone", 578, 1847, 22.99, 4),
+(43, "Wuthering Heights", "Bronte, Emily", "classics", "hardcover", "new", "fiction", "standalone", 353, 1847, 18.19, 13),
+(44, "The Tenant of Wildfell Hall", "Bronte, Anne", "classics", "hardcover", "new", "fiction", "standalone", 416, 1848, 14.95, 14),
+(45, "Hyperbole and a Half", "Brosh, Allie", "memoir", "graphic novel", "new", "nonfiction", "standalone", 369, 2013, 18.88, 27),
+(46, "Solutions and Other Problems", "Brosh, Allie", "memoir", "graphic novel", "new", "nonfiction", "standalone", 528, 2022, 15, 58),
+(47, "Romeo and Juliet", "Shakespeare, William", "plays", "paperback", "new", "fiction", "standalone", 123, 1594, 4.99, 14),
+(48, "A Midsummer Night's Dream", "Shakespeare, William", "plays", "paperback", "new", "fiction", "standalone", 256, 1595, 6.29, 12),
+(49, "The Merchant of Venice", "Shakespeare, William", "plays", "paperback", "new", "fiction", "standalone", 238, 1596, 5.59, 13),
+(50, "Much Ado About Nothing", "Shakespeare, William", "plays", "paperback", "new", "fiction", "standalone", 246, 1598, 5.19, 111),
+(51, "As You Like It", "Shakespeare, William", "plays", "paperback", "new", "fiction", "standalone", 368, 1599, 9.99, 10),
+(52, "Twelfth Night", "Shakespeare, William", "plays", "paperback", "new", "fiction", "standalone", 222, 1599, 8.34, 11),
+(53, "Hamlet", "Shakespeare, William", "plays", "paperback", "new", "fiction", "standalone", 304, 1605, 6.99, 75),
+(54, "Macbeth", "Shakespeare, William", "plays", "paperback", "new", "fiction", "standalone", 432, 1600, 9.95, 5),
+(55, "The Winter's Tale", "Shakespeare, William", "plays", "paperback", "new", "fiction", "standalone", 352, 1610, 9.95, 16),
+(56, "The Sonnets and a Lover's Complaint", "Shakespeare, William", "poetry", "hardcover", "new", "fiction", "standalone", 272, 2010, 15.52, 9),
+(57, "Love Poems", "Neruda, Pablo", "poetry", "paperback", "new", "fiction", "standalone", 64, 2008, 10.49, 44),
+(58, "The Complete Poems of Emily Dickinson", "Dickinson, Emily", "poetry", "paperback", "new", "fiction", "standalone", 770, 1976, 15.99, 15),
+(59, "Ariel: The Restored Edition", "Plath, Sylvia", "poetry", "paperback", "new", "fiction", "standalone", 256, 2018, 12.29, 27),
+(60, "Leaves of Grass", "Whitman, Walt", "poetry", "hardcover", "new", "fiction", "standalone", 208, 1855, 18, 28);
 
 ——display all data in database
 SELECT * FROM bookstore;
@@ -55,6 +85,9 @@ SELECT * FROM bookstore WHERE page_count > 400 ORDER BY page_count;
 
 ——display all nonfiction books in database
 SELECT * FROM bookstore WHERE category = "nonfiction";
+
+——display all poetry books in database organized alphabetically by author's last name
+SELECT * FROM bookstore WHERE genre = "poetry" ORDER BY author;
 
 ——display all books in database that are part of a series
 SELECT * FROM bookstore WHERE status = "series";
