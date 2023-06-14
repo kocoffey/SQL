@@ -1,0 +1,73 @@
+/** Design a Store Database **/
+
+——create bookstore database
+CREATE TABLE bookstore (id INTEGER PRIMARY KEY, title TEXT, author TEXT, genre TEXT, format TEXT, condition TEXT, category TEXT, status TEXT, page_count INTEGER, publication_year INTEGER, price INTEGER, quantity INTEGER);
+
+INSERT INTO bookstore VALUES
+(1, "Game of Thrones, A (A Song of Ice and Fire #1)", "Martin, George R.R.", "fantasy", "paperback", "new", "fiction", "series", 694, 1996, 13.46, 17),
+(2, "Dune (Dune #1)", "Herbert, Frank", "science fiction", "hardcover", "new", "fiction", "series", 896, 1965, 32.99, 17),
+(3, "Haunting of Hill House, The", "Jackson, Shirley", "horror", "paperback", "new", "fiction", "standalone", 246, 1959, 17.99, 9),
+(4, "We Have Always Lived in the Castle", "Jackson, Shirley", "horror", "paperback", "used", "fiction", "standalone", 214, 1962, 7.99, 4),
+(5, "Pet Sematary", "King, Stephen", "horror", "paperback", "used", "fiction", "standalone", 374, 1983, 6, 1),
+(6, "House of Leaves", "Danielewski, Mark Z.", "horror", "paperback", "new", "fiction", "standalone", 709, 2000, 18.99, 3),
+(7, "Daughter of the Forest (Sevenwaters #1)", "Marillier, Juliet", "fantasy", "paperback", "used", "fiction", "series", 552, 1999, 7.99, 2),
+(8, "Anything We Love Can Be Saved: A Writer's Activism", "Walker, Alice", "essays", "paperback", "used", "nonfiction", "standalone", 288, 1997, 11.99, 6),
+(9, "Stonewall: The Definitive Story of the LGBTQ Rights Uprising that Changed America", "Duberman, Martin", "social justice", "paperback", "new", "nonfiction", "standalone", 399, 1993, 17.99, 12),
+(10, "New Jim Crow, The: Mass Incarceration in the Age of Colorblindness", "Alexander, Michelle", "social justice", "paperback", "new", "nonfiction", "standalone", 290, 2010, 18.99, 10),
+(11, "We Keep Us Safe: Building Secure, Just, and Inclusive Communities", "Norris, Zach", "social justice", "hardcover", "new", "nonfiction", "standalone", 208, 2020, 22.99, 2),
+(12, "Hood Feminism: Notes from the Women That a Movement Forgot", "Kendall, Mikki", "social justice", "hardcover", "used", "nonfiction", "standalone", 267, 2020, 11.99, 11),
+(13, "Know My Name", "Miller, Chanel", "memoir", "paperback", "new", "nonfiction", "standalone", 384, 2019, 18.99, 13),
+(14, "Sorrow and Bliss", "Mason, Meg", "contemporary", "paperback", "new", "fiction", "standalone", 352, 2020, 17.99, 12),
+(15, "Kiss Her Once For Me", "Cochrun, Alison", "romance", "paperback", "new", "fiction", "standalone", 368, 2022, 17.99, 14),
+(16, "Tell No One", "Coben, Harlan", "thriller", "paperback", "used", "fiction", "standalone", 370, 2001, 3.99, 2),
+(17, "Last House on Needless Street, The", "Ward, Catriona", "thriller", "paperback", "used", "fiction", "standalone", 335, 2021, 14.99, 4),
+(18, "I Let You Go", "Mackintosh, Clare", "thriller", "paperback", "used", "fiction", "standalone", 400, 2014, 6.99, 3),
+(19, "Life and Death of Anne Boleyn, The", "Ives, Eric", "history", "paperback", "used", "nonfiction", "standalone", 458, 2004, 17, 2),
+(20, "Sharp Objects", "Flynn, Gillian", "thriller", "paperback", "used", "fiction", "standalone", 254, 2006, 5.99, 3),
+(21, "Pride and Prejudice", "Austen, Jane", "classics", "hardcover", "new", "fiction", "standalone", 279, 1813, 17.99, 14),
+(22, "East of Eden", "Steinbeck, John", "classics", "paperback", "used", "fiction", "standalone", 601, 1952, 7.99, 2),
+(23, "To the Lighthouse", "Woolf, Virginia", "classics", "paperback", "used", "fiction", "standalone", 209, 1927, 5.99, 3),
+(24, "Little Princess, A", "Hodgson Burnett, Frances", "children's classics", "hardcover", "used", "fiction", "standalone", 294, 1905, 11, 1),
+(25, "Anne of Green Gables (Anne of Green Gables #1)", "Montgomery, L.M.", "children's classics", "paperback", "new", "fiction", "series", 384, 1908, 12.99, 24),
+(26, "Black Stallion, The (The Black Stallion #1)", "Farley, Walter", "children's classics", "paperback", "used", "fiction", "series", 201, 1941, 6.99, 1),
+(27, "True Confessions of Charlotte Doyle, The", "Avi", "children's classics", "paperback", "used", "fiction", "standalone", 232, 1990, 4.99, 4),
+(28, "Final Empire, The (Mistborn #1)", "Sanderson, Brandon", "fantasy", "paperback", "new", "fiction", "series", 672, 2006, 13.80, 8),
+(29, "Assassin's Apprentice (The Farseer Trilogy #1)", "Hobb, Robin", "fantasy", "paperback", "new", "fiction", "series", 435, 1995, 11.43, 9),
+(30, "Indigenous Peoples' History of the United States, An (ReVisioning American History #3)", "Dunbar-Ortiz, Roxanne", "history", "paperback", "used", "nonfiction", "series", 320, 2014, 12.79, 4);
+
+——display all data in database
+SELECT * FROM bookstore;
+
+——display books in database alphabetically by title
+SELECT * FROM bookstore ORDER BY title;
+
+——display books in database alphabetically by author's last name
+SELECT * FROM bookstore ORDER BY author;
+
+——display books in database whose price is more than $26
+SELECT * FROM bookstore WHERE price > 26 ORDER BY price;
+
+——display all fantasy books in database
+SELECT * FROM bookstore WHERE genre = "fantasy";
+
+——display books in database with more than 400 pages
+SELECT * FROM bookstore WHERE page_count > 400 ORDER BY page_count;
+
+——display all nonfiction books in database
+SELECT * FROM bookstore WHERE category = "nonfiction";
+
+——display all books in database that are part of a series
+SELECT * FROM bookstore WHERE status = "series";
+
+——display books in database whose price is less than $12.99
+SELECT * FROM bookstore WHERE price < 12.99 ORDER BY price;
+
+——display all hardcover books in database
+SELECT * FROM bookstore WHERE format = "hardcover";
+
+——display all books in database published after 2008
+SELECT * FROM bookstore WHERE publication_year > 2008 ORDER BY publication_year;
+
+——display all used books in database
+SELECT * FROM bookstore WHERE condition = "used";
+
